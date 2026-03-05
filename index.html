@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumit Behera — Frontend Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e8572a'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia' font-size='26' font-weight='900' fill='white'%3ESB%3C/text%3E%3C/svg%3E"
+  />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─────────────────────────────────────────
+       GLOBAL UI CHROME
+  ───────────────────────────────────────── -->
+  <div id="pbar"></div>
+  <div id="cDot"  aria-hidden="true"></div>
+  <div id="cRing" aria-hidden="true"></div>
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+
+  <!-- ─────────────────────────────────────────
+       ENTRY / SPLASH SCREEN
+  ───────────────────────────────────────── -->
+  <div id="entry" role="dialog" aria-label="Portfolio intro screen">
+    <canvas id="starCanvas" aria-hidden="true"></canvas>
+    <div class="moon" aria-hidden="true"></div>
+
+    <div class="entry-text">
+      <div class="entry-greeting">Welcome to my portfolio</div>
+      <h1 class="entry-name"><em>Sumit</em> Behera</h1>
+      <p class="entry-role">Frontend Developer</p>
+
+      <a class="enter-btn" id="enterBtn" href="#" role="button" aria-label="Enter portfolio">
+        Enter Portfolio
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <p class="entry-hint">Press Enter or click to continue</p>
+      <div class="entry-line" aria-hidden="true"></div>
+    </div>
+  </div>
+
+
+  <!-- ─────────────────────────────────────────
+       MOBILE NAVIGATION OVERLAY
+  ───────────────────────────────────────── -->
+  <div id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <a href="#about"     class="mobile-nav-link">About</a>
+    <a href="#education" class="mobile-nav-link">Education</a>
+    <a href="#projects"  class="mobile-nav-link">Work</a>
+    <a href="#skills"    class="mobile-nav-link">Skills</a>
+    <a href="#contact"   class="mobile-nav-link">Contact</a>
+  </div>
+
+
+  <!-- ─────────────────────────────────────────
+       MAIN SITE
+  ───────────────────────────────────────── -->
+  <div id="site">
+
+    <!-- NAV -->
+    <nav id="nav" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="Sumit Behera — home">
+        <div class="nav-logo-box" aria-hidden="true">SB</div>
+        <span class="nav-logo-name">Sumit Behera</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button
+        id="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+
+    <!-- ── HERO ── -->
+    <section id="hero" aria-label="Introduction">
+      <div class="h-grid"    aria-hidden="true"></div>
+      <div class="h-blob hb1" aria-hidden="true"></div>
+      <div class="h-blob hb2" aria-hidden="true"></div>
+
+      <div class="hero-left">
+        <div class="hero-tag">
+          <span class="tag-dot" aria-hidden="true"></span>
+          Available for opportunities
+        </div>
+
+        <h1 class="hero-h">
+          <span class="hh-sub">crafting the web</span>
+          <span class="hh-main">Sumit Behera</span>
+          <span class="hh-role">Frontend Dev</span>
+        </h1>
+
+        <p class="hero-desc">
+          Building modern, responsive web experiences with precision and passion —
+          from pixel-perfect UIs to full-stack dashboards that feel alive.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#projects" class="btn-fire">
+            View My Work
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn-line">Get in Touch</a>
+        </div>
+
+        <div class="hero-stats" aria-label="Quick stats">
+          <div class="hst">
+            <span class="hst-n">6+</span>
+            <span class="hst-l">Projects</span>
+          </div>
+          <div class="hst-sep" aria-hidden="true"></div>
+          <div class="hst">
+            <span class="hst-n">6</span>
+            <span class="hst-l">Skills</span>
+          </div>
+          <div class="hst-sep" aria-hidden="true"></div>
+          <div class="hst">
+            <span class="hst-n">BCA</span>
+            <span class="hst-l">Pursuing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <canvas id="deskCanvas" aria-label="Illustrated developer workspace"></canvas>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-bar"></div>
+      </div>
+    </section>
+
+
+    <!-- ── ABOUT ── -->
+    <section id="about" aria-label="About me">
+      <div class="about-layout">
+
+        <!-- Left: text -->
+        <div>
+          <div class="sec-tag sr sr-fade">01 — About</div>
+          <h2 class="sec-head sr sr-up" style="--sd: .08s">
+            Crafting code<br>with <em>care</em>
+          </h2>
+
+          <p class="about-para sr sr-up" style="--sd: .15s">
+            I'm a frontend developer with a hands-on approach to learning — building
+            real projects to grow my skills, explore modern UI patterns, and deliver
+            applications people actually enjoy using.
+          </p>
+
+          <p class="about-para sr sr-up" style="--sd: .20s">
+            Currently pursuing my
+            <strong>BCA at Indian Institute of Management and Science, Bhubaneswar
+            (Affiliated to Utkal University)</strong>, while actively expanding my
+            technical arsenal and taking on meaningful projects.
+          </p>
+
+          <div class="about-highlights sr sr-up" style="--sd: .27s">
+            <div class="ah">
+              <span class="ah-icon" aria-hidden="true">🎯</span>
+              <span class="ah-text">Strong foundation in frontend development with a focus on clean, accessible UI</span>
+            </div>
+            <div class="ah">
+              <span class="ah-icon" aria-hidden="true">📱</span>
+              <span class="ah-text">Experience building responsive dashboards and full web applications</span>
+            </div>
+            <div class="ah">
+              <span class="ah-icon" aria-hidden="true">🔨</span>
+              <span class="ah-text">Hands-on, project-based learner who thrives on solving real problems</span>
+            </div>
+            <div class="ah">
+              <span class="ah-icon" aria-hidden="true">🚀</span>
+              <span class="ah-text">Continuously learning — motivated to grow through every line of code</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: stats + quote -->
+        <div class="about-right">
+          <div class="about-stat-grid sr sr-scale" style="--sd: .10s">
+            <div class="astat"><div class="astat-n">6+</div><div class="astat-l">Projects Built</div></div>
+            <div class="astat"><div class="astat-n">6</div><div class="astat-l">Skills</div></div>
+            <div class="astat"><div class="astat-n">∞</div><div class="astat-l">Curiosity</div></div>
+            <div class="astat"><div class="astat-n">BCA</div><div class="astat-l">Pursuing</div></div>
+          </div>
+
+          <blockquote class="about-quote sr sr-up" style="--sd: .32s">
+            "Great interfaces are built with equal parts logic and empathy."
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── EDUCATION ── -->
+    <section id="education" aria-label="Education">
+      <div class="sec-tag sr sr-fade">02 — Education</div>
+      <h2 class="sec-head sr sr-up" style="--sd: .08s">Academic <em>journey</em></h2>
+
+      <div class="edu-grid">
+
+        <!-- BCA -->
+        <div class="edu-card sr sr-up" style="--sd: .10s">
+          <div class="edu-top-bar" style="background: linear-gradient(90deg, var(--emb3), var(--ember), var(--emb2))"></div>
+          <div class="edu-head">
+            <div
+              class="edu-icon"
+              style="background: linear-gradient(135deg, var(--emb3), var(--ember)); box-shadow: 0 0 24px rgba(232,87,42,.4)"
+              aria-hidden="true"
+            >🎓</div>
+            <span
+              class="edu-badge"
+              style="color: var(--ember); background: rgba(232,87,42,.1); border: 1px solid rgba(232,87,42,.22)"
+            >In Progress</span>
+          </div>
+          <div class="edu-degree">Bachelor of Computer<br>Applications <em style="color: var(--ember)">(BCA)</em></div>
+          <div class="edu-school" style="color: var(--emb2)">Indian Institute of Management and Science</div>
+          <div class="edu-location">Bhubaneswar, Odisha · Affiliated to Utkal University</div>
+          <div class="edu-status">
+            <div class="edu-dot" style="background: var(--amber); box-shadow: 0 0 8px var(--amber); animation: pu 2s infinite" aria-hidden="true"></div>
+            <span class="edu-year">Currently Pursuing</span>
+          </div>
+        </div>
+
+        <!-- Higher Secondary -->
+        <div class="edu-card sr sr-up" style="--sd: .20s">
+          <div class="edu-top-bar" style="background: linear-gradient(90deg, #5b21b6, #7c3aed, #a78bfa)"></div>
+          <div class="edu-head">
+            <div
+              class="edu-icon"
+              style="background: linear-gradient(135deg, #5b21b6, #7c3aed); box-shadow: 0 0 24px rgba(124,58,237,.35)"
+              aria-hidden="true"
+            >🏫</div>
+            <span
+              class="edu-badge"
+              style="color: #a78bfa; background: rgba(124,58,237,.12); border: 1px solid rgba(124,58,237,.28)"
+            >Completed</span>
+          </div>
+          <div class="edu-degree">Higher Secondary Education</div>
+          <div class="edu-stream" style="color: #a78bfa">12th Grade · Science Stream</div>
+          <div class="edu-school" style="color: #a78bfa">Pattamundai Higher Secondary School</div>
+          <div class="edu-location">Pattamundai, Kendrapara, Odisha</div>
+          <div class="edu-status">
+            <div class="edu-dot" style="background: #86efac; box-shadow: 0 0 8px #86efac" aria-hidden="true"></div>
+            <span class="edu-year">2021 – 2023</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects" aria-label="Projects">
+      <div class="sec-tag sr sr-fade">03 — Work</div>
+      <h2 class="sec-head sr sr-up" style="--sd: .08s">From Idea <em>to Deploy</em></h2>
+
+      <div class="proj-grid">
+
+        <!-- 01 Netflix Clone -->
+        <div class="pc sr sr-up" style="--sd: .00s">
+          <div class="pc-spot" aria-hidden="true"></div>
+          <div class="pc-num">01</div>
+          <span class="pc-icon" aria-hidden="true">🎬</span>
+          <h3 class="pc-name">Netflix Clone</h3>
+          <p class="pc-desc">A pixel-accurate, fully responsive Netflix UI clone focused on layout structure, responsiveness, and modern UI practices.</p>
+          <div class="pc-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="pc-links">
+            <a href="https://sumitbehera720.github.io/netflix-clone/" target="_blank" rel="noopener" class="lk-d">Live Demo →</a>
+          </div>
+        </div>
+
+        <!-- 02 ShopHub -->
+        <div class="pc sr sr-up" style="--sd: .07s">
+          <div class="pc-spot" aria-hidden="true"></div>
+          <div class="pc-num">02</div>
+          <span class="pc-icon" aria-hidden="true">🛍️</span>
+          <h3 class="pc-name">ShopHub</h3>
+          <p class="pc-desc">Amazon-inspired e-commerce frontend with structured product layouts, reusable UI components, and responsive design across all screen sizes.</p>
+          <div class="pc-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="pc-links">
+            <a href="https://sumitbehera720.github.io/shophub/" target="_blank" rel="noopener" class="lk-d">Live Demo →</a>
+          </div>
+        </div>
+
+        <!-- 03 Job Application Tracker -->
+        <div class="pc sr sr-up" style="--sd: .14s">
+          <div class="pc-spot" aria-hidden="true"></div>
+          <div class="pc-badge">Featured</div>
+          <div class="pc-num">03</div>
+          <span class="pc-icon" aria-hidden="true">📋</span>
+          <h3 class="pc-name">Job Application Tracker</h3>
+          <p class="pc-desc">Full-stack dashboard for tracking job applications, interview stages, and statuses — Python backend, deployed live on Render.</p>
+          <div class="pc-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span></div>
+          <div class="pc-links">
+            <a href="https://job-application-tracker-5kjd.onrender.com" target="_blank" rel="noopener" class="lk-r">🚀 Live Demo</a>
+            <a href="https://sumitbehera720.github.io/job-application-tracker/login.html" target="_blank" rel="noopener" class="lk-g">GitHub</a>
+          </div>
+        </div>
+
+        <!-- 04 CryptoScope -->
+        <div class="pc sr sr-up" style="--sd: .21s">
+          <div class="pc-spot" aria-hidden="true"></div>
+          <div class="pc-num">04</div>
+          <span class="pc-icon" aria-hidden="true">📈</span>
+          <h3 class="pc-name">CryptoScope Dashboard</h3>
+          <p class="pc-desc">A cryptocurrency market dashboard presenting live trends, statistics, and pricing data in a clean, data-dense modern UI.</p>
+          <div class="pc-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="pc-links">
+            <a href="https://sumitbehera720.github.io/cryptoscope-dashboard/" target="_blank" rel="noopener" class="lk-d">Live Demo →</a>
+          </div>
+        </div>
+
+        <!-- 05 Tic Tac Toe -->
+        <div class="pc sr sr-up" style="--sd: .28s">
+          <div class="pc-spot" aria-hidden="true"></div>
+          <div class="pc-num">05</div>
+          <span class="pc-icon" aria-hidden="true">🎮</span>
+          <h3 class="pc-name">Tic Tac Toe</h3>
+          <p class="pc-desc">A simple interactive Tic Tac Toe game built using HTML, CSS, and JavaScript. This was my first frontend project where I implemented game logic, player turns, and win detection. It helped me understand DOM manipulation and basic JavaScript logic.</p>
+          <div class="pc-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="pc-links">
+            <a href="https://sumitbehera720.github.io/tic-tac-toe/" target="_blank" rel="noopener" class="lk-d">Live Demo →</a>
+          </div>
+        </div>
+
+        <!-- 06 Campus Notes -->
+        <div class="pc sr sr-up" style="--sd: .35s">
+          <div class="pc-spot" aria-hidden="true"></div>
+          <div class="pc-num">06</div>
+          <span class="pc-icon" aria-hidden="true">📚</span>
+          <h3 class="pc-name">Campus Notes</h3>
+          <p class="pc-desc">Ongoing student platform to organize and manage academic notes — built for scalability and ease of use.</p>
+          <div class="pc-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="pc-stat">
+            <span class="sdot" aria-hidden="true"></span>
+            In Progress
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── SKILLS ── -->
+    <section id="skills" aria-label="Skills">
+      <canvas id="solarBg" aria-hidden="true"></canvas>
+
+      <div class="skills-inner">
+        <div class="sec-tag sr sr-fade">04 — Skills</div>
+        <h2 class="sec-head sr sr-up" style="--sd: .08s">My <em>toolkit</em></h2>
+
+        <div class="skills-grid-row">
+
+          <div class="sk sr sr-up" style="--sd: .00s">
+            <div class="sk-top"><span class="sk-em" aria-hidden="true">🌐</span><span class="sk-pct" aria-label="92 percent">92%</span></div>
+            <div class="sk-name">HTML5</div>
+            <div class="sk-track" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 proficiency">
+              <div class="sk-fill" data-w="92"></div>
+            </div>
+            <p class="sk-note">Semantic markup, accessibility, structured layouts</p>
+          </div>
+
+          <div class="sk sr sr-up" style="--sd: .07s">
+            <div class="sk-top"><span class="sk-em" aria-hidden="true">🎨</span><span class="sk-pct" aria-label="88 percent">88%</span></div>
+            <div class="sk-name">CSS3</div>
+            <div class="sk-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 proficiency">
+              <div class="sk-fill" data-w="88"></div>
+            </div>
+            <p class="sk-note">Flexbox, Grid, animations, responsive</p>
+          </div>
+
+          <div class="sk sr sr-up" style="--sd: .14s">
+            <div class="sk-top"><span class="sk-em" aria-hidden="true">⚡</span><span class="sk-pct" aria-label="85 percent">85%</span></div>
+            <div class="sk-name">JavaScript</div>
+            <div class="sk-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript proficiency">
+              <div class="sk-fill" data-w="85"></div>
+            </div>
+            <p class="sk-note">ES6+, DOM, interactive UIs</p>
+          </div>
+
+          <div class="sk sr sr-up" style="--sd: .21s">
+            <div class="sk-top"><span class="sk-em" aria-hidden="true">☕</span><span class="sk-pct" aria-label="70 percent">70%</span></div>
+            <div class="sk-name">Java</div>
+            <div class="sk-track" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Java proficiency">
+              <div class="sk-fill" data-w="70"></div>
+            </div>
+            <p class="sk-note">OOP, data structures, algorithms</p>
+          </div>
+
+          <div class="sk sr sr-up" style="--sd: .28s">
+            <div class="sk-top"><span class="sk-em" aria-hidden="true">🐍</span><span class="sk-pct" aria-label="65 percent">65%</span></div>
+            <div class="sk-name">Python</div>
+            <div class="sk-track" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Python proficiency">
+              <div class="sk-fill" data-w="65"></div>
+            </div>
+            <p class="sk-note">Scripting, automation, backend basics</p>
+          </div>
+
+          <div class="sk sr sr-up" style="--sd: .35s">
+            <div class="sk-top"><span class="sk-em" aria-hidden="true">⚙️</span><span class="sk-pct" aria-label="60 percent">60%</span></div>
+            <div class="sk-name">C++</div>
+            <div class="sk-track" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="C++ proficiency">
+              <div class="sk-fill" data-w="60"></div>
+            </div>
+            <p class="sk-note">Memory management, competitive programming</p>
+          </div>
+
+          <div class="sk sk-w2 sr sr-up" style="--sd: .42s">
+            <div class="sk-top"><span class="sk-em" aria-hidden="true">🛠️</span></div>
+            <div class="sk-name">Tools</div>
+            <div class="sk-chips">
+              <span>Git</span><span>GitHub</span><span>Figma</span>
+              <span>Canva</span><span>VS Code</span><span>MS Office</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" aria-label="Contact">
+      <div class="contact-word" aria-hidden="true">HELLO</div>
+
+      <div class="contact-layout">
+
+        <!-- Left: CTA -->
+        <div>
+          <div class="sec-tag sr sr-fade">05 — Contact</div>
+          <h2 class="sec-head sr sr-up" style="--sd: .08s">
+            Let's build<br>something<br><em>great together</em>
+          </h2>
+          <p class="contact-sub sr sr-up" style="--sd: .15s">
+            Open to internships, freelance projects, and collaborations.
+            Drop me a message — I'd love to connect.
+          </p>
+          <a href="mailto:beherasumit772@gmail.com" class="btn-fire sr sr-up" style="--sd: .22s">
+            Say Hello
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right: contact links -->
+        <div class="clinks sr sr-right" style="--sd: .15s">
+          <a href="mailto:beherasumit772@gmail.com" class="cl magnetic">
+            <div class="cl-i" aria-hidden="true">✉️</div>
+            <div class="cl-info">
+              <div class="cl-lbl">Email</div>
+              <div class="cl-val">beherasumit772@gmail.com</div>
+            </div>
+            <span class="cl-arr" aria-hidden="true">→</span>
+          </a>
+
+          <a href="https://github.com/sumitbehera720" target="_blank" rel="noopener" class="cl magnetic">
+            <div class="cl-i" aria-hidden="true">🐙</div>
+            <div class="cl-info">
+              <div class="cl-lbl">GitHub</div>
+              <div class="cl-val">github.com/sumitbehera720</div>
+            </div>
+            <span class="cl-arr" aria-hidden="true">→</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/sumit-behera-1869b6347/" target="_blank" rel="noopener" class="cl magnetic">
+            <div class="cl-i" aria-hidden="true">💼</div>
+            <div class="cl-info">
+              <div class="cl-lbl">LinkedIn</div>
+              <div class="cl-val">sumit-behera-1869b6347</div>
+            </div>
+            <span class="cl-arr" aria-hidden="true">→</span>
+          </a>
+
+          <div class="cl cl-s">
+            <div class="cl-i" aria-hidden="true">📍</div>
+            <div class="cl-info">
+              <div class="cl-lbl">Location</div>
+              <div class="cl-val">Bhubaneswar, Odisha, India</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <span>Designed &amp; built by <strong>Sumit Behera</strong></span>
+      <span class="fsep" aria-hidden="true">✦</span>
+      <span>Bhubaneswar, India · <span id="footerYear"></span></span>
+    </footer>
+
+  </div><!-- /#site -->
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
